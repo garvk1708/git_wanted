@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 13%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 246 80% 60%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 222 47% 18%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 222 47% 15%;
+    --muted-foreground: 217 33% 80%;
+    
+    --accent: 160 84% 39%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 63% 45%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 222 47% 25%;
+    --input: 222 47% 25%;
+    --ring: 246 80% 60%;
+    
+    --radius: 0.5rem;
+    
+    --chart-1: var(--primary);
+    --chart-2: 160 84% 39%;
+    --chart-3: 31 91% 54%;
+    --chart-4: 262 80% 58%;
+    --chart-5: 338 75% 62%;
+    
+    --sidebar-background: 222 47% 13%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 246 80% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 160 84% 39%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 20%;
+    --sidebar-ring: 246 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background: linear-gradient(to bottom, hsl(222, 47%, 11%), hsl(222, 47%, 15%));
+    min-height: 100vh;
+    font-weight: 400;
+    letter-spacing: 0.015em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .typing-animation {
+    @apply overflow-hidden border-r-4 border-primary whitespace-nowrap;
+  }
+  
+  .glow-effect {
+    @apply shadow-[0_0_15px_rgba(99,102,241,0.5)] transition-all duration-300;
+  }
+  
+  .glow-effect:hover {
+    @apply shadow-[0_0_25px_rgba(99,102,241,0.8)];
+  }
+  
+  .glow-text {
+    @apply text-shadow-[0_0_10px_rgba(99,102,241,0.5)];
+  }
+  
+  .nav-item {
+    @apply relative;
+  }
+  
+  .nav-item::after {
+    @apply content-[''] absolute w-0 h-0.5 bg-primary bottom-[-4px] left-0 transition-all duration-300;
+  }
+  
+  .nav-item:hover::after {
+    @apply w-full;
+  }
+  
+  .hex-grid-item {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  
+  /* Enhanced Form Elements */
+  input, textarea, select {
+    @apply text-base;
+  }
+  
+  /* Dialog/Modal Improvements */
+  [role="dialog"] {
+    @apply backdrop-blur-sm;
+  }
+  
+  /* Better modal contrast */
+  .bg-card {
+    @apply shadow-lg border-border border;
+  }
+  
+  /* Form labels */
+  label {
+    @apply font-medium text-foreground;
+  }
+  
+  /* Elevated buttons */
+  .btn-elevated {
+    @apply relative shadow-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  /* Repository selection modal */
+  .repository-selection-modal {
+    @apply bg-card p-6 rounded-lg border border-primary/20 shadow-xl;
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: hsl(var(--primary)) }
+}
