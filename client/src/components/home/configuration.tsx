@@ -1,5 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
+
+// Example: Access an environment variable
+console.log("Database URL:", process.env.DATABASE_URL);
 
 export default function Configuration() {
   const [isCodeVisible, setIsCodeVisible] = useState(false);

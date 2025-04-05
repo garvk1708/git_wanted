@@ -1,4 +1,8 @@
 import { z } from "zod";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
 
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
@@ -45,3 +49,6 @@ export const clientEnv = {
   VITE_ETHEREUM_NETWORK: process.env.ETHEREUM_NETWORK || "sepolia",
   VITE_STRIPE_PUBLIC_KEY: process.env.VITE_STRIPE_PUBLIC_KEY,
 };
+
+// Example: Access an environment variable
+console.log("Database URL:", process.env.DATABASE_URL);

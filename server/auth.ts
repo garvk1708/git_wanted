@@ -5,6 +5,13 @@ import { getEnv } from "../shared/env";
 import { AuthUser, GitHubUserResponse } from "../shared/types";
 import { scrypt, randomBytes, timingSafeEqual } from "crypto";
 import { promisify } from "util";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
+
+// Example: Access an environment variable
+console.log("Database URL:", process.env.DATABASE_URL);
 
 const env = getEnv();
 const scryptAsync = promisify(scrypt);

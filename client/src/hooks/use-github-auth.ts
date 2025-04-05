@@ -12,8 +12,8 @@ export function useGithubAuth() {
     try {
       // Use hardcoded values for direct GitHub login
       // This bypasses our backend for auth URL generation to eliminate potential issues
-      const clientId = "e8f18e1b4db5c83a0ba0";
-      const redirectUri = "https://56ddbf20-f332-489a-955a-6490fe0001b5-00-24jikthftbrfj.janeway.replit.dev/api/auth/github/callback";
+      const clientId = "Ov23liFLewafbNVgTBco";
+      const redirectUri = "http://127.0.0.1:3000/api/auth/github/callback";
       const scope = "user:email,read:user,read:org,repo";
       
       const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;

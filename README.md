@@ -1,6 +1,5 @@
 # GitWanted: Blockchain-Powered Bounty Platform
 
-![GitWanted Logo]
 
 GitWanted is a full-stack web application that bridges GitHub issues with cryptocurrency rewards, empowering developers to earn crypto for solving open-source challenges. This platform connects project maintainers who need help with developers looking to earn rewards, all managed through blockchain technology.
 

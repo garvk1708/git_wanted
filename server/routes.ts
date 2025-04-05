@@ -1,3 +1,8 @@
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
+
 import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
@@ -16,6 +21,8 @@ import { getEnv } from "../shared/env";
 import cookieParser from "cookie-parser";
 
 const env = getEnv();
+
+console.log("Loaded DATABASE_URL:", process.env.DATABASE_URL);
 
 interface AuthenticatedRequest extends Request {
   user?: any;
