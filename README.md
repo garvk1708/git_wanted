@@ -309,16 +309,9 @@ When you make changes to any file, the development server will automatically rel
 
 ## Deployment Guide
 
-### Option 1: Deploy to Replit
 
-1. Create a new Replit project
-2. Import the GitHub repository
-3. Set up environment variables in Replit Secrets
-4. Run `npm install`
-5. Run `npm run build`
-6. Run `npm start`
 
-### Option 2: Deploy to Traditional Hosting
+### Option 1: Deploy to Traditional Hosting
 
 1. Build the frontend:
    ```bash
@@ -331,7 +324,7 @@ When you make changes to any file, the development server will automatically rel
    npm start
    ```
 
-### Option 3: Docker Deployment
+### Option 2: Docker Deployment
 
 1. Build the Docker image:
    ```bash
